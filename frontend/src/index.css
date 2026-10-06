@@ -102,3 +102,21 @@ td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
+
+.property-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.property-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 280px;
+}
+
+.property-card h2 {
+  margin-top: 0;
+}
