@@ -1,4 +1,5 @@
 import { properties } from "../data/fakeData";
+import { Link } from "react-router-dom";
 
 function Properties() {
   return (
@@ -14,6 +15,7 @@ function Properties() {
             <p>Type: {property.propertyType}</p>
             <p>Owner: {property.ownerName}</p>
             <p>Units: {property.units.length}</p>
+            <Link to={`/properties/${property.id}`}>View Property</Link>
           </div>
         ))}
       </div>
