@@ -126,3 +126,15 @@ td {
   margin-top: 10px;
   color: #2563eb;
 }
+
+.unit-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  max-width: 400px;
+}
+
+.unit-card h3 {
+  margin-top: 0;
+}
