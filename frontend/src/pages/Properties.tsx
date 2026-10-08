@@ -6,6 +6,7 @@ function Properties() {
     <div>
       <h1>Properties</h1>
       <p>View and manage your rental properties.</p>
+      <Link to="/properties/new">Add Property</Link>
 
       <div className="property-grid">
         {properties.map((property) => (
