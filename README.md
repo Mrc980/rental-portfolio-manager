@@ -19,7 +19,7 @@ I'm building this project to help manage my family's rental properties. The idea
 - FastAPI
 - Uvicorn
 
-**Database (Planned)**
+**Database**
 
 - PostgreSQL
 - SQLAlchemy
@@ -34,6 +34,8 @@ I'm building this project to help manage my family's rental properties. The idea
 - Add Property form UI
 - Sample rent payment records
 - Basic FastAPI endpoints
+- PostgreSQL database connection
+- Property database model and table
 
 The frontend currently uses sample data. The backend is still being developed, and the property form is not connected to it yet.
 
@@ -65,7 +67,7 @@ Activate the virtual environment (Windows PowerShell):
 Install dependencies:
 
 ```bash
-python -m pip install fastapi uvicorn
+python -m pip install fastapi uvicorn sqlalchemy psycopg2-binary python-dotenv
 ```
 
 Start the backend:
@@ -74,10 +76,14 @@ Start the backend:
 python -m uvicorn app.main:app --reload
 ```
 
+### Database Setup
+
+The project uses PostgreSQL with SQLAlchemy. Create a database called `rental_portfolio` and configure the connection in `.env`.
+
 ## Planned Features
 
-- PostgreSQL database connection
 - Property API endpoints
+- Loading properties from PostgreSQL
 - Saving properties through the Add Property form
 - Tenant and lease management
 - Rent payment tracking
