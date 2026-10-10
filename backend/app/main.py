@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
@@ -41,3 +41,15 @@ def create_property(property: schemas.PropertyCreate, db: Session = Depends(get_
     db.refresh(new_property)
 
     return new_property
+
+
+@app.get("/properties/{property_id}", response_model=schemas.PropertyResponse)
+def get_property(property_id: int, db: Session = Depends(get_db)):
+    property = db.query(models.Property).filter(
+        models.Property.id == property_id
+    ).first()
+
+    if property is None:
+        raise HTTPException(status_code=404, detail="Property not found")
+
+    return property
