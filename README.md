@@ -18,6 +18,7 @@ I'm building this project to help manage my family's rental properties. The idea
 - Python
 - FastAPI
 - Uvicorn
+- Pydantic
 
 **Database**
 
@@ -26,18 +27,21 @@ I'm building this project to help manage my family's rental properties. The idea
 
 ## Current Features
 
-- Dashboard with property and unit statistics
+- Dashboard with property and unit statistics using sample data
 - Occupied and vacant unit counts
 - Expected monthly rent
 - Property list and individual property pages
-- Room details, rent amounts, and occupancy status
-- Add Property form UI
+- Add Property form connected to backend
+- Saving and retrieving properties from PostgreSQL
+- FastAPI endpoints for creating and retrieving properties
+- Pydantic schemas for request and response validation
+- Property database model and table using SQLAlchemy
+- Handling requests for properties that do not exist
 - Sample rent payment records
-- Basic FastAPI endpoints
-- PostgreSQL database connection
-- Property database model and table
 
-The frontend currently uses sample data. The backend is still being developed, and the property form is not connected to it yet.
+Property creation, listing, and individual property details now use PostgreSQL. 
+The dashboard, rental units, and rent payments still use sample data while the remaining backend features are being developed.
+
 
 ## Running the Project
 
@@ -67,7 +71,7 @@ Activate the virtual environment (Windows PowerShell):
 Install dependencies:
 
 ```bash
-python -m pip install fastapi uvicorn sqlalchemy psycopg2-binary python-dotenv
+python -m pip install fastapi uvicorn sqlalchemy psycopg2-binary python-dotenv pydantic
 ```
 
 Start the backend:
@@ -82,11 +86,16 @@ The project uses PostgreSQL with SQLAlchemy. Create a database called `rental_po
 
 ## Planned Features
 
-- Property API endpoints
-- Loading properties from PostgreSQL
-- Saving properties through the Add Property form
+- Rental unit database models and API endpoints
+- Loading rental units from PostgreSQL
 - Tenant and lease management
 - Rent payment tracking
+- Connecting dashboard statistics to PostgreSQL
+- Add sample properties, tenants, leases, and rent payments for testing
+- Automated tests
+- Form validation and error handling improvements
+- Property editing and deletion
 - Responsive layout improvements
+
 
 Rent payments will be made outside the website. The application will only track payments, not process them.
